@@ -1,2 +1,2 @@
 # lastfm-widget
-A simple widget that show what song is currently listening
+A simple widget that shows what song a user is currently listening using the LastFM API
