@@ -12,9 +12,9 @@ const getUserData = () => {
       let artistName = track.artist["#text"];
       let albumCover = track.image[3]["#text"];
       let isPlaying = track["@attr"] && track["@attr"].nowplaying === "true";
-      document.getElementById("music-title").innerHTML = trackName;
-      document.getElementById("album-name").innerHTML = albumName;
-      document.getElementById("artist-name").innerHTML = artistName;
+      document.getElementById("music-title").innerText = trackName;
+      document.getElementById("album-name").innerText = albumName;
+      document.getElementById("artist-name").innerText = artistName;
       document.getElementById("album-cover").src = albumCover;
       document.getElementById(
         "music-link"
@@ -22,10 +22,11 @@ const getUserData = () => {
         artistName
       )}/_/${encodeURIComponent(trackName)}`;
 
-      document.getElementById("playing-status").innerHTML = isPlaying
+      document.getElementById("playing-status").innerText = isPlaying
         ? "Now playing:"
         : "Recently played:";
     });
 };
 getUserData();
+// Update the widget every 10 seconds //
 setInterval(getUserData, 10 * 1000);
